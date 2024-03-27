@@ -21,8 +21,8 @@ export default function Form ({ mode, onSubmit }: FormProps) {
     };
 
     return (
-        <div className='col-2-ab'>
-            <RsForm className='form'onSubmit={handleSubmit}>
+        <div>
+            <RsForm onSubmit={handleSubmit}>
             <h2>{mode === 'login' ? 'Login' : 'Cadastro'}</h2> 
                 <FormGroup floating className='inputform'>
                     <Input
@@ -36,7 +36,7 @@ export default function Form ({ mode, onSubmit }: FormProps) {
                     <Label for="email">Email</Label>
                 </FormGroup>
                
-                <FormGroup floating className='inputform'>
+                <FormGroup floating>
                     <Input
                         id="password"
                         name="password"
