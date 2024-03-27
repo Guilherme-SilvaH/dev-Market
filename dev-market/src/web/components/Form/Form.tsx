@@ -8,7 +8,7 @@ interface FormProps {
     onSubmit: (email: string, password: string) => void;
 }
 
-export default function Form({ mode, onSubmit }: FormProps) {
+export default function Form ({ mode, onSubmit }: FormProps) {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const target = event.target as typeof event.target & {
@@ -21,11 +21,8 @@ export default function Form({ mode, onSubmit }: FormProps) {
     };
 
     return (
-        <>
-
-        <div className='form-container'>
+        <div className='col-2-ab'>
             <RsForm className='form'onSubmit={handleSubmit}>
-
             <h2>{mode === 'login' ? 'Login' : 'Cadastro'}</h2> 
                 <FormGroup floating className='inputform'>
                     <Input
@@ -38,7 +35,7 @@ export default function Form({ mode, onSubmit }: FormProps) {
                     />
                     <Label for="email">Email</Label>
                 </FormGroup>
-                {' '}
+               
                 <FormGroup floating className='inputform'>
                     <Input
                         id="password"
@@ -49,7 +46,7 @@ export default function Form({ mode, onSubmit }: FormProps) {
                     />
                     <Label for="password">Password</Label>
                 </FormGroup>
-                {' '}
+               
                 <Button type="submit">
                     {mode === 'login' ? 'Login' : 'Sign Up'}
                 </Button>
@@ -59,8 +56,6 @@ export default function Form({ mode, onSubmit }: FormProps) {
             ) : (
                 <p>Já tem uma conta? <a href="/login">Login</a></p>
             )}
-
         </div>
-        </>
     );
 }

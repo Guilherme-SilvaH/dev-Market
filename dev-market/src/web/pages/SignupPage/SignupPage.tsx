@@ -1,7 +1,8 @@
 import './Sigup.sass';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Container } from 'reactstrap';
 import Form from '../../../web/components/Form/Form'; 
 import imgBack from '../../../source/pexels-johannes-plenio-1103970.jpg'; 
+
 
 export default function SignupPage() {
     // Função para tratar o envio do formulário
@@ -11,16 +12,17 @@ export default function SignupPage() {
     };
 
     return (
-        <main className='container-sigup'>
-            <Row xs={2}>
-                <Col  className='col-1-img'>
-                    <img src={imgBack} alt='1' /> 
-                </Col>
-
-                <Col className='col-2-form-sigup'>
-                    <Form mode="signup" onSubmit={handleSignupSubmit} />
-                </Col>
-            </Row>
+        <main className="landing-page">
+            <Container className="container-row">
+                <Row xs={2}>
+                    <Col id="col-1-ab">
+                        <img src={imgBack} alt='1' /> 
+                    </Col>
+                    <Col id='col-2-ab'>
+                        <Form mode="signup" onSubmit={handleSignupSubmit} />
+                    </Col>
+                </Row>
+            </Container>  
         </main>
     );                
 }
