@@ -3,7 +3,7 @@ import { Button, Form as FormGroup, Input, Label } from 'reactstrap';
 
 interface FormProps {
     mode: string;
-    onSubmit: (email: string, password: string) => void;
+    onSubmit: (email: string, password: string, confirmepassword: string) => void;
 }
 
 export default function Form({ mode, onSubmit }: FormProps) {
@@ -12,10 +12,12 @@ export default function Form({ mode, onSubmit }: FormProps) {
         const target = event.target as typeof event.target & {
             email: { value: string };
             password: { value: string };
+            confirmepassword: { value: string };
         };
         const email = target.email.value;
         const password = target.password.value;
-        onSubmit(email, password);
+        const confirmepassword = target.confirmepassword.value
+        onSubmit(email, password,confirmepassword);
     };
 
     return (
@@ -32,21 +34,32 @@ export default function Form({ mode, onSubmit }: FormProps) {
 
             <FormGroup>
                 <Label for="Password">Password</Label>
-                <Input type="password" name="password" id="examplePassword" placeholder="123456789" />
+                <Input type="password" name="password" id="examplePassword" placeholder="1234@dDev" />
             </FormGroup>
-
-            <FormGroup check>
-                <Label check>
-                    <Input type="checkbox" />{' '}
-                    Check me out
-                </Label>
-            </FormGroup>
-
+            {mode === 'login' ? (
+                <></>
+            ) : (
+                <FormGroup>
+                    <Label for="confirmepassword">Password</Label>
+                    <Input type="password" name="confirmepassword" id="exampleconfirmepassword" placeholder="Confirme the Passoword" />
+                </FormGroup>
+            )}
+    
+            {mode === 'login' ? (
+                <></>
+            ) : (
+                <FormGroup check>
+                    <Label check>
+                        <Input type="checkbox" />{' '}
+                        Ao criar uma conta significa que você concorda com nossos Temos de Serviço e Política de Privacidade 
+                    </Label>
+                </FormGroup>
+            )}
             <Button className='container-button' type="submit" >
                 {mode === 'login' ? 'Login' : 'Sign Up'}
             </Button>
             {mode === 'login' ? (
-                <p className='container-p'>Não tem uma conta? <a href="/signup">Cadastre-se</a></p>
+                <p className='container-p'>Não tem uma conta? <a href="/">Cadastre-se</a></p>
             ) : (
                 <p className='container-p'>Já tem uma conta? <a href="/login">Login</a></p>
             )}

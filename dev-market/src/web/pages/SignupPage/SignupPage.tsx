@@ -1,14 +1,24 @@
+import { useState } from 'react'; // Import useState
 import './Sigup.sass'
 import { Row, Col, Container } from 'reactstrap';
-import Form from '../../../web/components/Form/Form'; 
+import Form from '../../components/Form/Form'; 
 import imgBack from '../../../source/OIP.jpg'; 
 
 
 export default function SignupPage() {
+    const [errorMessage, setErrorMessage] = useState('')
     // Função para tratar o envio do formulário
-    const handleSignupSubmit = (email: string, password: string) => {
-        console.log('Cadastro com:', email, password);
-        //lógica de cadastro aqui (ex: chamada a API)
+    const handleSignupSubmit = (email: string, password: string, confirmepassword: string) => {
+        if (password === confirmepassword) {
+            console.log('Cadastro com:', email, password,);
+            setErrorMessage(''); 
+        }else {
+            return (
+                setErrorMessage('As senhas não coincidem. Por favor, tente novamente.') // Set error message
+            )
+            
+        }
+
     };
 
     return (
@@ -20,6 +30,7 @@ export default function SignupPage() {
                     </Col>
                     <Col id='col-2-ab'>
                         <div className='div-form'>
+                            {errorMessage && <div className="error-message">{errorMessage}</div>}
                             <Form mode="signup" onSubmit={handleSignupSubmit} />
                         </div>
                     </Col>
