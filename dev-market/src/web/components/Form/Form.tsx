@@ -44,7 +44,6 @@ export default function Form({ mode, onSubmit }: FormProps) {
                     <Input type="password" name="confirmepassword" id="exampleconfirmepassword" placeholder="Confirme the Passoword" />
                 </FormGroup>
             )}
-    
             {mode === 'login' ? (
                 <></>
             ) : (
