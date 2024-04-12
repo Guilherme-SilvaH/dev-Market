@@ -23,10 +23,19 @@ export default function Form({ mode, onSubmit }: FormProps) {
     return (
         <form onSubmit={handleSubmit}>
             <div id='container-titles'>
-                <h1>{mode === 'login' ? 'Login' : 'Cadastro'}</h1>
+                <h1>{mode === 'login' ? 'Login' : 'signup'}</h1>
                 <h2>Comece sem pagar nada</h2>
             </div>
 
+            {mode === 'signup' ? (
+                <FormGroup>
+                    <Label for="Email">Username</Label>
+                    <Input type="text" name="username" id="exampleusername" placeholder="username" />
+                </FormGroup>
+            ) : (
+               <></>
+            )}
+            
             <FormGroup>
                 <Label for="Email">Email</Label>
                 <Input type="email" name="email" id="exampleEmail" placeholder="example@gmail.com" />
