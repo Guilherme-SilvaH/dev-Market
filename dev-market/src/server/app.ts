@@ -1,12 +1,8 @@
-import express from "express";
-import router from "./routers"; // Assegure-se de que o caminho está correto
+import express from 'express';
+import authRoutes from './routes/authRoutes';
 
 const app = express();
-const PORT = 3000;
+app.use(express.json());
+app.use('/api/auth', authRoutes);
 
-// Utilizando o roteador no caminho '/api'
-app.use(router);
-
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+app.listen(3000, () => console.log('Server running on http://localhost:3000'));

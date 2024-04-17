@@ -1,23 +1,26 @@
+import React from 'react';
 import { FormEvent } from 'react';
 import { Button, Form as FormGroup, Input, Label } from 'reactstrap';
 
 interface FormProps {
     mode: string;
-    onSubmit: (email: string, password: string, confirmepassword: string) => void;
+    onSubmit: (username: string, email: string, password: string, confirmepassword: string) => void;
 }
 
 export default function Form({ mode, onSubmit }: FormProps) {
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const target = event.target as typeof event.target & {
+            username: {value: string}
             email: { value: string };
             password: { value: string };
             confirmepassword: { value: string };
         };
+        const username = target.username.value
         const email = target.email.value;
         const password = target.password.value;
         const confirmepassword = target.confirmepassword.value
-        onSubmit(email, password,confirmepassword);
+        onSubmit(username, email, password,confirmepassword);
     };
 
     return (

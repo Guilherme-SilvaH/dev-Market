@@ -3,12 +3,13 @@ import './Login.sass'
 import { Row, Col, Container } from 'reactstrap';
 import Form from '../../components/Form/Form'; 
 import imgBack from '../../../source/OIP.jpg'; 
+import React from 'react';
 
 
 export default function Login() {
     // Função para tratar o envio do formulário
-    const handleSignupSubmit = (email: string, password: string) => {
-        console.log('Cadastro com:', email, password,);
+    const handleSignupSubmit = (username:string , email: string, password: string) => {
+        console.log('Cadastro com:',username, email, password,);
     };
 
     return (

@@ -3,6 +3,7 @@ import './Sigup.sass'
 import { Row, Col, Container } from 'reactstrap';
 import Form from '../../components/Form/Form'; 
 import imgBack from '../../../source/OIP.jpg'; 
+import React from 'react';
 
 
 export default function SignupPage() {

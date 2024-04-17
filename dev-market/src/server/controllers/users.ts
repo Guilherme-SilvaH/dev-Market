@@ -1,13 +1,16 @@
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from "typeorm";
 
-import pool from "../connection"
-import { Request, Response } from 'express'
+@Entity()
+export class User extends BaseEntity {
+    @PrimaryGeneratedColumn()
+    id!: number;
 
-const usersList = async (req: Request, res: Response) => {
-    try {
-        const usersList = await pool.query('SELECT * FROM users');
-        res.status(200).send(usersList.rows);
-    } catch (error) {
-        res.status(500).send("Erro ao recuperar os usuários");
-    }
+    @Column({ unique: true })
+    username!: string; // 
+
+    @Column({ unique: true })
+    email!: string;
+
+    @Column()
+    password!: string;
 }
-export default usersList;
