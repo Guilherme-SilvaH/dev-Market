@@ -10,5 +10,5 @@ const pool = new Pool({
     password: 'postgres'  // Senha do usuário
 });
 
-// Exporta a instância pool para que possa ser utilizada em outros arquivos do projeto.
+
 export default pool;
