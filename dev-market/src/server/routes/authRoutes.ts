@@ -10,7 +10,6 @@ const router = Router();
 router.post('/register', async (req, res) => {
     try {
         const { name, email, password, confirmPassword } = req.body;
-        console.log(req.body)
         // Validação de entrada...
         if (!name || !email || !password || !confirmPassword) {
             return res.status(400).json({ message: "All fields are required" }); 
