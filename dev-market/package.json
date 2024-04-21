@@ -4,13 +4,16 @@
   "version": "0.0.0",
   "main": "inedex.js",
   "scripts": {
+    "vite": "vite",
     "start": "node dist/server/app.js",
     "build": "tsc",
     "dev": "nodemon --exec ts-node src/server/app.ts"
   },
   "dependencies": {
+    "axios": "^1.6.8",
     "bcrypt": "^5.1.1",
     "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "pg": "^8.11.5",
