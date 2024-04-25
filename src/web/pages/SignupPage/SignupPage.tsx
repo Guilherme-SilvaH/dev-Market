@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Sigup.sass';
 import { Row, Col, Container } from 'reactstrap';
-import Form from '../../components/Form/Form'; 
+import Form from '../../components/auth/Form/Form'; 
 import imgBack from '../../../source/OIP.jpg'; 
 import React from 'react';
 import axios from 'axios';
