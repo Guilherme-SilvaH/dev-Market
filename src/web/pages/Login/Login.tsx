@@ -1,7 +1,7 @@
 
 import './Login.sass'
 import { Row, Col, Container } from 'reactstrap';
-import Form from '../../components/Form/Form'; 
+import Form from '../../components/auth/Form/Form'; 
 import imgBack from '../../../source/OIP.jpg'; 
 import React, { useState } from 'react';
 import axios from 'axios';
