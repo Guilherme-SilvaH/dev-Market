@@ -52,7 +52,7 @@ export default function Form({ mode, onSubmit }: FormProps) {
             {mode === 'signup' && (
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />
+                        <Input type="checkbox"/>
                         Ao criar uma conta significa que você concorda com nossos Temos de Serviço e Política de Privacidade
                     </Label>
                 </FormGroup>
@@ -63,7 +63,7 @@ export default function Form({ mode, onSubmit }: FormProps) {
             </Button>
 
             {mode === 'login' ? (
-                <p className='container-p'>Não tem uma conta? <a href="/signup">Cadastre-se</a></p>
+                <p className='container-p'>Não tem uma conta? <a href="/SignupPage">Cadastre-se</a></p>
             ) : (
                 <p className='container-p'>Já tem uma conta? <a href="/login">Login</a></p>
             )}
